@@ -1,0 +1,24 @@
+<header>
+  <div class="logo">
+    <a class="site-logo" routerLink="/">
+      <img src="assets/images/soren-logo.svg" alt="logo" height="56px" />
+    </a>
+  </div>
+
+  @if (isToggleMobileMenu) {
+    <app-navbar-mobile [userName$]="userName$" (logout)="handleLogout()"></app-navbar-mobile>
+  } @else {
+    <app-navbar-desktop [userName$]="userName$" (logout)="handleLogout()"></app-navbar-desktop>
+  }
+
+  <div class="mobile-toggle">
+    <button
+      class="btn outline outline-primary"
+      type="button"
+      (click)="toggleMobileMenu()"
+      [title]="'navbar.displayMenu' | translate"
+    >
+      <i class="ph ph-list"></i>
+    </button>
+  </div>
+</header>

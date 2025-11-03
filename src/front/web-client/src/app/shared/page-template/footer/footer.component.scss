@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  align-self: stretch;
+  border-top: 1px solid var(--border-color, #ddd);
+  background: var(--primary-background, #f8f8f8);
+  margin-top: 50px;
+
+  .footer-text {
+    color: var(--foot-text-color);
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}

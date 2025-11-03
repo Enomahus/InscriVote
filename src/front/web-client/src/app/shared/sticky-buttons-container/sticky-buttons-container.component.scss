@@ -1,0 +1,29 @@
+.actions-container {
+  position: sticky;
+  bottom: -2px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+  margin-bottom: -26px;
+
+  &.from-modal {
+    margin-bottom: 0;
+  }
+
+  .background {
+    gap: 16px;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius: 50px;
+    margin-bottom: 16px;
+  }
+
+  &.stuck .background {
+    background-color: var(--primary-background);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--standard-box-shadow);
+  }
+}
