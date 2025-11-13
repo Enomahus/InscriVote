@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "AppDbDesign": "Server=localhost,43180;Database=ApVotingRollDb;Connection Lifetime=30;User ID=sa;Password=png@ssocies225;Encrypt=False"
+  }
+}

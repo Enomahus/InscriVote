@@ -42,7 +42,7 @@
             },
             "previewLimit": 50,
             "server": "localhost",
-            "port": 42170,
+            "port": 43180,
             "driver": "MSSQL",
             "mane": "Inscription vote local",
             "database": "VotingRollDb",
