@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "playwright test",
+    "test-ui": "playwright test --ui --ui-host=0.0.0.0 --ui-port=4900"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +13,9 @@
   "type": "commonjs",
   "devDependencies": {
     "playwright": "^1.56.1"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.1"
   }
 }
