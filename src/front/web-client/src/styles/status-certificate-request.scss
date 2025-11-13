@@ -1,0 +1,26 @@
+.status {
+  &.status-certificate-draft {
+    background-color: var(--certificate-request-status-draft-background-color);
+    color: var(--text-color); // si besoin text sombre
+  }
+  &.status-certificate-inProgress {
+    background-color: var(--certificate-request-status-in-progress-background-color);
+  }
+  &.status-certificate-accepted {
+    background-color: var(--certificate-request-status-accepted-background-color);
+  }
+  &.status-certificate-closed {
+    background-color: var(--certificate-request-status-closed-background-color);
+    color: #fff;
+  }
+  &.status-certificate-awaitingInformation {
+    background-color: var(--certificate-request-status-awaiting-information-background-color);
+  }
+  &.status-certificate-awaitingQuotationValidation {
+    background-color: var(--certificate-request-status-awaiting-quotation-validation-background-color);
+    color: #fff;
+  }
+  &.status-certificate-rejected {
+    background-color: var(--certificate-request-status-rejected-background-color);
+  }
+}

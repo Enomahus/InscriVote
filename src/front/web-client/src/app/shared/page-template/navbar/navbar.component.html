@@ -1,0 +1,29 @@
+<header>
+  <div class="logo">
+    <a class="site-logo" routerLink="/">
+      <img src="assets/images/Logo-CEI.png" alt="logo" height="56px" />
+    </a>
+  </div>
+
+  @if (isToggleMobileMenu) {
+    <app-navbar-mobile  ></app-navbar-mobile>
+  } @else {
+    <app-navbar-desktop ></app-navbar-desktop>
+  }
+
+  <div class="mobile-toggle">
+    <button
+      class="btn outline outline-primary"
+      type="button"
+      (click)="toggleMobileMenu()"
+      [title]="'navbar.displayMenu' | translate"
+    >
+      <i class="ph ph-list"></i>
+    </button>
+  </div>
+  <div class="logo">
+    <a class="site-logo" routerLink="/">
+      <img src="assets/images/Armoirie-de-côte-dIvoire.png" alt="logo" height="56px" />
+    </a>
+  </div>
+</header>

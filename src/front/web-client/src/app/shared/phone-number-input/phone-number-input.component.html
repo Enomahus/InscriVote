@@ -1,0 +1,26 @@
+
+<div>
+  <form [formGroup]="phoneForm">
+    <div class="wrapper">
+      <ngx-intl-tel-input
+        [cssClass]="'custom'"
+        [class.disabled]="readonly"
+        [id]="labelForId"
+        [preferredCountries]="preferredCountries"
+        [enableAutoCountrySelect]="true"
+        [enablePlaceholder]="true"
+        [searchCountryFlag]="true"
+        [searchCountryField]="[searchCountryField.Iso2, searchCountryField.Name]"
+        [selectFirstCountry]="true"
+        [selectedCountryISO]="countryISO.France"
+        [maxLength]="20"
+        [phoneValidation]="true"
+        [separateDialCode]="separateDialCode"
+        [numberFormat]="phoneNumberFormat.International"
+        name="phone"
+        formControlName="phone"
+      >
+      </ngx-intl-tel-input>
+    </div>
+  </form>
+</div>

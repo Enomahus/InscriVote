@@ -1,0 +1,215 @@
+{
+  "breadcrumb": {
+    "bonusAdd": "",
+    "bonusEdit": "",
+    "bonuses": "",
+    "brandAdd": "",
+    "brandEdit": "",
+    "brands": "",
+    "certificateRequests": "",
+    "criteriaAdd": "",
+    "criteriaEdit": "",
+    "criterias": "",
+    "panelReferenceAdd": "",
+    "panelReferences": "",
+    "stakeholderAdd": "",
+    "stakeholders": "",
+    "userCreate": "",
+    "userEdit": "",
+    "users": ""
+  },
+  "errors": {
+    "backendCodes": {
+      "accessRights": "",
+      "notFound": "",
+      "validation": "",
+      "validationCodes": {
+        "BrandLinked": "",
+        "BrandMustExist": "",
+        "CountryMustExist": "",
+        "CriteriaLinked": "",
+        "CriteriaMustExist": "",
+        "InvalidEmail": "",
+        "InvalidPassword": "",
+        "InvalidPostcode": "",
+        "MaxLength": "",
+        "PositiveNumber": "",
+        "Required": "",
+        "SiretOrTvaNumberRequired": "",
+        "StakeholderLinked": "",
+        "StakeholderMustExist": "",
+        "StakeholderNotDuplicated": "",
+        "Unique": "",
+        "UserMustExist": ""
+      }
+    },
+    "gridError": "",
+    "serverError": ""
+  },
+  "export": {
+    "filename": {
+      "bonuses": "",
+      "brands": "",
+      "certificateRequests": "",
+      "criterias": "",
+      "scaleVersions": "",
+      "stakeholders": "",
+      "users": ""
+    }
+  },
+  "footer": {
+    "appName": "",
+    "copyright": "© 2025 All rights reserved.",
+    "company": "Electoral independente commission."
+  },
+  "forgotPassword": {
+    "email": "",
+    "forgotActionButton": "",
+    "mailAlreadySendButton": "",
+    "returnToLogin": "",
+    "success": ""
+  },
+  "formsError": {
+    "emailInvalid": "",
+    "gpsInvalid": "",
+    "max": "",
+    "maxAttachments": "",
+    "min": "",
+    "mobileInvalid": "",
+    "onlyNumberPav": "",
+    "passwordFormat": "",
+    "passwordMismatch": "",
+    "phoneInvalid": "",
+    "positiveDecimal": "",
+    "positiveInteger": "",
+    "postCodeInvalid": "",
+    "required": "",
+    "siretInvalid": "",
+    "siretOrTvaNumberRequired": "",
+    "strictPositiveDecimal": "",
+    "strictPositiveInteger": "",
+    "tvaNumberInvalid": ""
+  },
+  "global": {
+    "accept": "Accpet",
+    "back": "Back",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "confirmation": "Confirmation",
+    "createAccount": "Create account",
+    "creationConfirmation": "",
+    "delete": "Delete",
+    "deleteConfirmation": "Delete confirmation",
+    "edit": "Edit",
+    "errorGetCurrentUser": "Error retrieving current user",
+    "login": "Sign in",
+    "missingData": "Missing data",
+    "no": "No",
+    "notFound": "Resource not found",
+    "save": "Save",
+    "search": "Search",
+    "yes": "Yes",
+    "titleTemplate": "{{title}} | {{project}} | CEI.CI",
+    "noTitleTemplate": "{{project}} | CEI.CI",
+    "projectTitle": "Electoral roll"
+  },
+  "login": {
+    "anonymousRequest": "",
+    "contactUs": "Contact us :",
+    "forgotPassword": "I have forgotten my password",
+    "guestLoginFailed": "Guest access denied",
+    "loginFailed": "Incorrect password or username",
+    "password": "Password",
+    "passwordConfirm": "Password confirmation",
+    "title": "Log in",
+    "username": "Username"
+  },
+  "home": {
+    "title": "Home page"
+  },
+  "navbar": {
+    "administration": "Administration",
+    "displayMenu": "Display menu",
+    "logout": "Log out",
+    "home": "Home page",
+    "onlineGuide": "Online guide",
+    "users": "Users"
+  },
+  "personTitle": {
+    "mr": "Mr",
+    "mrs": "Mrs"
+  },
+  "postalAddress": {
+    "address": "",
+    "city": "",
+    "company": "",
+    "country": "",
+    "gpsCoordinates": "",
+    "postcode": ""
+  },
+  "register": {
+    "title": "Create account"
+  },
+  "resetPassword": {
+    "invalidLink": "",
+    "missingParams": "",
+    "password": "",
+    "resetActionButton": "",
+    "resetSuccess": ""
+  },
+  "roles": {
+    "CertificationBodyRole": "",
+    "DefaultRole": "",
+    "SuperAdmin": ""
+  },
+  "users": {
+    "addUser": "",
+    "deleteUser": "",
+    "deleteUserError": "",
+    "deleteUserPrompt": "",
+    "deleteUserSuccess": "",
+    "disableUser": "",
+    "disableUserError": "",
+    "disableUserSuccess": "",
+    "editUser": "",
+    "email": "",
+    "enableUser": "",
+    "enableUserError": "",
+    "enableUserSuccess": "",
+    "firstName": "",
+    "form": {
+      "acceptTermsOfUse": "",
+      "activities": "",
+      "cancelStakeholderCreation": "",
+      "create": "",
+      "createError": "",
+      "createStakeholder": "",
+      "createSuccess": "",
+      "createdAt": "",
+      "edit": "",
+      "email": "",
+      "firstName": "",
+      "isActive": "",
+      "lastName": "",
+      "newStakeholder": "",
+      "phone": "",
+      "registerError": "",
+      "registerSuccess": "",
+      "reset-password": "",
+      "resetPasswordError": "",
+      "resetPasswordSuccess": "",
+      "stakeholder": "",
+      "termsNotValidated": "",
+      "termsOfUse": "",
+      "termsOfUseDate": "",
+      "updateError": "",
+      "updateMyInformationsSuccess": "",
+      "updateSuccess": ""
+    },
+    "lastName": "",
+    "myInformations": "",
+    "phone": "",
+    "stakeholder": "",
+    "title": ""
+  }
+}

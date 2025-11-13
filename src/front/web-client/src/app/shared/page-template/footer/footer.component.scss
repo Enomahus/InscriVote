@@ -1,0 +1,21 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  background-color: green;
+  height: 40px;
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-transform: uppercase;
+    color: white;
+
+    .f-left,
+    .f-right {
+      flex: 1;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+# 🔧 Normalisation des fins de ligne pour tous les fichiers texte
+* text=auto
+
+# 🛡️ Forcer LF pour les fichiers source (Unix-style)
+*.cs     text eol=lf
+*.json   text eol=lf
+*.ts     text eol=lf
+*.html   text eol=lf
+*.css    text eol=lf
+*.scss   text eol=lf
+*.md     text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+
+# 🪟 Optionnel : conserver CRLF pour certains fichiers Windows-only
+*.bat    text eol=crlf
+*.cmd    text eol=crlf
+
+# 🧱 Fichiers binaires (ne pas modifier)
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.pdf    binary
+*.zip    binary
+*.exe    binary
+*.dll    binary
+
+# 🧪 Tests et snapshots
+*.snap   text eol=lf
+*.spec.* text eol=lf
