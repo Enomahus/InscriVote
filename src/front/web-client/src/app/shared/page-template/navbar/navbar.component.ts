@@ -3,10 +3,8 @@ import { Component, DestroyRef, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
-import { CurrentUserService } from '@app/services/current-user.service';
 import { TranslateModule } from '@ngx-translate/core';
-import { AuthService } from '@services/auth/auth.service';
-import { filter, Observable, tap } from 'rxjs';
+import { filter, tap } from 'rxjs';
 import { NavbarDesktopComponent } from './navbar-desktop/navbar-desktop.component';
 import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 
@@ -25,15 +23,15 @@ import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 })
 export class NavbarComponent {
   isToggleMobileMenu = false;
-  userName$: Observable<string>;
+  //userName$: Observable<string>;
 
-  private readonly authService = inject(AuthService);
-  private readonly currentUserService = inject(CurrentUserService);
+  // private readonly authService = inject(AuthService);
+  // private readonly currentUserService = inject(CurrentUserService);
   private readonly destroyRef = inject(DestroyRef);
   private readonly router = inject(Router);
 
   constructor() {
-    this.userName$ = this.currentUserService.currentUserName$.pipe(takeUntilDestroyed(this.destroyRef));
+    //this.userName$ = this.currentUserService.currentUserName$.pipe(takeUntilDestroyed(this.destroyRef));
 
     // Hide mobile menu after having navigated to another page.
     this.router.events
@@ -47,10 +45,10 @@ export class NavbarComponent {
       .subscribe();
   }
 
-  handleLogout(): void {
-    this.authService.logout();
-    this.router.navigate(['/login']);
-  }
+  // handleLogout(): void {
+  //   this.authService.logout();
+  //   this.router.navigate(['/login']);
+  // }
 
   toggleMobileMenu(): void {
     this.isToggleMobileMenu = !this.isToggleMobileMenu;

@@ -3,105 +3,26 @@
   <ul class="menu menu-left">
     <li class="menu-item" [routerLinkActive]="'active'">
       <a class="menu-item-interaction" routerLink="home">
-        <div *appHideIfAdmin>
-          <span *appHasPermission="'accessCertificateRequestsPage'">
-            {{ 'navbar.myRequests' | translate }}
-          </span>
-          <span *appHasPermission="'accessCertificateRequestsForManagementPage'">
-            {{ 'navbar.myRequestsForManagement' | translate }}
-          </span>
-        </div>
-        <span *appHasPermission="'accessCertificateRequestsForAdminPage'">
-          {{ 'navbar.myRequestsForAdmin' | translate }}
-        </span>
+        {{'navbar.home' | translate}}
       </a>
     </li>
-    <li class="menu-item">
-      <a class="menu-item-interaction" routerLink="panel-references">
-        <span *appHasPermission="'accessPanelReferencesPage'">{{ 'panelReferences.title' | translate }}</span>
-      </a>
-    </li>
+
   </ul>
 
   <ul class="menu menu-right">
-    <li
-      class="menu-item"
-      [class.active]="isRouteMatching('admin')"
-      *appHasPermission="[
-        'accessStakeholdersAdminPage',
-        'accessUsersAdminPage',
-        'accessBrandsAdminPage',
-        'accessCriteriasAdminPage',
-        'accessBonusesAdminPage',
-        'accessScaleVersionsAdminPage',
-        'accessTermsOfUseAdminPage',
-      ]"
-    >
-      <button class="btn btn-no-style dropbtn menu-item-interaction" (click)="dropdownOpen = !dropdownOpen">
-        <span> {{ 'navbar.administration' | translate }} </span>
-        <i class="ph ph-caret-down"></i>
-      </button>
-      <div class="dropdown-content" *ngIf="dropdownOpen">
-        <a
-          routerLink="admin/stakeholders"
-          [routerLinkActive]="'active'"
-          *appHasPermission="'accessStakeholdersAdminPage'"
-          ><span>{{ 'navbar.stakeholders' | translate }}</span>
-        </a>
-        <a routerLink="admin/users" [routerLinkActive]="'active'" *appHasPermission="'accessUsersAdminPage'"
-          ><span> {{ 'navbar.users' | translate }} </span>
-        </a>
-        <a routerLink="admin/brands" [routerLinkActive]="'active'" *appHasPermission="'accessBrandsAdminPage'"
-          ><span> {{ 'navbar.brands' | translate }} </span>
-        </a>
-        <a
-          routerLink="admin/criterias"
-          [routerLinkActive]="'active'"
-          *appHasPermission="'accessCriteriasAdminPage'"
-          ><span> {{ 'navbar.criterias' | translate }} </span>
-        </a>
-        <a
-          routerLink="admin/bonuses"
-          [routerLinkActive]="'active'"
-          *appHasPermission="'accessBonusesAdminPage'"
-          ><span> {{ 'navbar.bonuses' | translate }} </span>
-        </a>
-        <a
-          routerLink="admin/scale-versions"
-          [routerLinkActive]="'active'"
-          *appHasPermission="'accessScaleVersionsAdminPage'"
-          ><span> {{ 'navbar.scaleVersions' | translate }} </span>
-        </a>
-        <a
-          routerLink="admin/terms-of-use"
-          [routerLinkActive]="'active'"
-          *appHasPermission="'accessTermsOfUseAdminPage'"
-          ><span> {{ 'navbar.termsOfUse' | translate }} </span>
-        </a>
-      </div>
+    <li class="menu-item" [routerLinkActive]="'active'">
+      <a class="menu-item-interaction" routerLink="guide">
+        {{'navbar.onlineGuide' | translate}}
+      </a>
     </li>
-    @if (userName$ | async; as userName) {
-      <li class="menu-item" [routerLinkActive]="'active'">
-        <a class="menu-item-interaction" routerLink="my-account">
-          <span class="current-username">{{ userName }}</span>
-        </a>
-      </li>
-    }
-    <li class="language-selector">
-      <!-- <kendo-combobox
-        [data]="langItems"
-        id="lang"
-        valueField="lang"
-        textField="displayText"
-        [valuePrimitive]="true"
-        [value]="currentLang$ | async"
-        (valueChange)="langChange($event)"
-        [clearButton]="false"
-      >
-      </kendo-combobox> -->
+    <li class="lang-switcher">
+      <app-language-switcher></app-language-switcher>
     </li>
     <li>
-      <button class="btn primary" type="button" (click)="logout.emit()" [title]="'navbar.logout' | translate">
+      <button class="btn primary"
+      type="button"
+      (click)="logout.emit()"
+      [title]="'navbar.logout' | translate">
         <i class="ph ph-sign-out"></i>
       </button>
     </li>

@@ -222,20 +222,10 @@
     "gridError": "Une erreur est survenue lors de la récupération des données de la grille",
     "serverError": "Erreur serveur"
   },
-  "export": {
-    "filename": {
-      "bonuses": "export-bonus",
-      "brands": "export-marques",
-      "certificateRequests": "export-demande-attestations",
-      "criterias": "export-criteres",
-      "scaleVersions": "export-versions",
-      "stakeholders": "export-societes",
-      "users": "export-utilisateurs",
-      "panelReferences": "export-references-panneaux"
-    }
-  },
   "footer": {
-    "appName": "Éco-modulation"
+    "appName": "Éco-modulation",
+    "copyright": "© 2025 Tous droits réservés.",
+    "company": "Commission électorale indépendante"
   },
   "forgotPassword": {
     "email": "Adresse mail",
@@ -275,22 +265,18 @@
     "creationConfirmation": "Confirmation de création",
     "delete": "Supprimer",
     "deleteConfirmation": "Confirmation de suppression",
-    "deny": "Refuser",
-    "details": "Détails",
     "edit": "Editer",
     "errorGetCurrentUser": "Erreur lors de la récupération de l'utilisateur courant.",
-    "height": "Hauteur",
-    "length": "Longueur",
     "login": "Se connecter",
     "missingData": "N/A",
     "no": "Non",
     "notFound": "Ressource introuvable",
     "save": "Enregistrer",
     "search": "Rechercher",
-    "tonnage": "Tonnage",
-    "tons": "tonnes",
-    "width": "Largeur",
-    "yes": "Oui"
+    "yes": "Oui",
+    "titleTemplate": "{{title}} | {{project}} | CEI.CI",
+    "noTitleTemplate": "{{project}} | CEI.CI",
+    "projectTitle": "Liste électorale"
   },
   "login": {
     "anonymousRequest": "Je souhaite faire une demande d'enlèvement sans m'identifier",
@@ -303,19 +289,15 @@
     "title": "Connexion",
     "username": "Identifiant (email)"
   },
+  "home": {
+    "title": "Accueil"
+  },
   "navbar": {
     "administration": "Administration",
-    "bonuses": "Référentiel bonus",
-    "brands": "Marques",
-    "criterias": "Référentiel critères",
     "displayMenu": "Afficher le menu",
     "logout": "Se déconnecter",
-    "myRequests": "Mes demandes",
-    "myRequestsForAdmin": "Demandes",
-    "myRequestsForManagement": "Demandes",
-    "scaleVersions": "Versions de barème d'éco modulation ",
-    "stakeholders": "Sociétés",
-    "termsOfUse": "Conditions générales d'utilisation",
+    "home": "Accueil",
+    "onlineGuide": "Online guide",
     "users": "Utilisateurs"
   },
   "personTitle": {

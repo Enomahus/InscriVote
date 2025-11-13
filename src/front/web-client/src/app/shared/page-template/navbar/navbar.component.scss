@@ -1,11 +1,11 @@
-@use '../../../../styles/themes/variable.scss' as *;
+@use "../../../../styles/themes/variable.scss" as *;
 
 header {
   position: relative;
   display: flex;
   align-items: center;
   gap: 24px;
-  background: var(--primary-background);
+  background: var(--warning-background);
   border-bottom: 1px solid var(--border-color);
   box-shadow: var(--standard-box-shadow);
   padding: 0 40px 0 32px;

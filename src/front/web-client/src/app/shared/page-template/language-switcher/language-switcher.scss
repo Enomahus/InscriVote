@@ -1,0 +1,14 @@
+.language-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  select {
+    border: 1px solid #ddd;
+    background-color: transparent;
+    border-radius: 8px;
+    height: 25px;
+    align-items: center;
+  }
+}

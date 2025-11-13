@@ -58,7 +58,9 @@
     }
   },
   "footer": {
-    "appName": ""
+    "appName": "",
+    "copyright": "© 2025 All rights reserved.",
+    "company": "Electoral independente commission."
   },
   "forgotPassword": {
     "email": "",
@@ -89,74 +91,53 @@
     "tvaNumberInvalid": ""
   },
   "global": {
-    "accept": "",
-    "back": "",
-    "cancel": "",
-    "confirm": "",
-    "confirmation": "",
-    "createAccount": "",
+    "accept": "Accpet",
+    "back": "Back",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "confirmation": "Confirmation",
+    "createAccount": "Create account",
     "creationConfirmation": "",
-    "delete": "",
-    "deleteConfirmation": "",
-    "deny": "",
-    "details": "",
-    "edit": "",
-    "errorGetCurrentUser": "",
-    "height": "",
-    "length": "",
-    "login": "",
-    "missingData": "",
-    "no": "",
-    "notFound": "",
-    "save": "",
-    "search": "",
-    "tonnage": "",
-    "tons": "",
-    "width": "",
-    "yes": ""
+    "delete": "Delete",
+    "deleteConfirmation": "Delete confirmation",
+    "edit": "Edit",
+    "errorGetCurrentUser": "Error retrieving current user",
+    "login": "Sign in",
+    "missingData": "Missing data",
+    "no": "No",
+    "notFound": "Resource not found",
+    "save": "Save",
+    "search": "Search",
+    "yes": "Yes",
+    "titleTemplate": "{{title}} | {{project}} | CEI.CI",
+    "noTitleTemplate": "{{project}} | CEI.CI",
+    "projectTitle": "Electoral roll"
   },
   "login": {
     "anonymousRequest": "",
-    "contactUs": "",
-    "forgotPassword": "",
-    "guestLoginFailed": "",
-    "loginFailed": "",
-    "password": "",
-    "passwordConfirm": "",
-    "title": "",
-    "username": ""
+    "contactUs": "Contact us :",
+    "forgotPassword": "I have forgotten my password",
+    "guestLoginFailed": "Guest access denied",
+    "loginFailed": "Incorrect password or username",
+    "password": "Password",
+    "passwordConfirm": "Password confirmation",
+    "title": "Log in",
+    "username": "Username"
+  },
+  "home": {
+    "title": "Home page"
   },
   "navbar": {
-    "administration": "",
-    "bonuses": "",
-    "brands": "",
-    "criterias": "",
-    "displayMenu": "",
-    "logout": "",
-    "myRequests": "",
-    "myRequestsForAdmin": "",
-    "myRequestsForManagement": "",
-    "scaleVersions": "",
-    "stakeholders": "",
-    "termsOfUse": "",
-    "users": ""
-  },
-  "panelReferences": {
-    "creationConfirmationMessage": "",
-    "form": {
-      "brand": "",
-      "createPanelReferenceSuccess": "",
-      "isValidated": "",
-      "reference": "",
-      "technology": "",
-      "titleNewPanelReference": "",
-      "unknownBrandMessage": "",
-      "updatePanelReferenceSuccess": ""
-    }
+    "administration": "Administration",
+    "displayMenu": "Display menu",
+    "logout": "Log out",
+    "home": "Home page",
+    "onlineGuide": "Online guide",
+    "users": "Users"
   },
   "personTitle": {
-    "mr": "",
-    "mrs": ""
+    "mr": "Mr",
+    "mrs": "Mrs"
   },
   "postalAddress": {
     "address": "",
@@ -167,7 +148,7 @@
     "postcode": ""
   },
   "register": {
-    "title": ""
+    "title": "Create account"
   },
   "resetPassword": {
     "invalidLink": "",

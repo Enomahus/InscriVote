@@ -1,4 +1,4 @@
-@use './variable.scss' as *;
+@use "./variable.scss" as *;
 
 body {
   // Default colors
@@ -12,6 +12,7 @@ body {
   --body-background: #f3f3f3;
   --primary-background: #ffffff;
   --secondary-background: #f8f8f8;
+  --warning-backgroung: #f57c00;
 
   --primary-title-color: var(--primary-color);
   --primary-text-color: #333;
@@ -127,12 +128,16 @@ body {
   --warning-bubble-text-color: #{$darker-yellow};
 
   // Certificate request status
-  --certificate-request-status-draft-background-color: var(--primary-background);
+  --certificate-request-status-draft-background-color: var(
+    --primary-background
+  );
   --certificate-request-status-in-progress-background-color: #a1aad8;
   --certificate-request-status-accepted-background-color: #{$lighter-green};
   --certificate-request-status-closed-background-color: #{$dark-green};
   --certificate-request-status-awaiting-information-background-color: #{$yellow};
-  --certificate-request-status-awaiting-quotation-validation-background-color: var(--primary-color);
+  --certificate-request-status-awaiting-quotation-validation-background-color: var(
+    --primary-color
+  );
   --certificate-request-status-rejected-background-color: #{$dark-red};
 
   // Certificate request types

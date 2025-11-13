@@ -1,0 +1,45 @@
+.login-form {
+  width: 100%;
+
+  .password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 100%;
+      padding: 8px 16px 8px 8px;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--primary-title-color);
+      i {
+        pointer-events: none;
+      }
+    }
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .other-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+    padding: 8px;
+
+    .forgot-password {
+      font-size: var(--font-size-info);
+      font-weight: 400;
+    }
+  }
+}

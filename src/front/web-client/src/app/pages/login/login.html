@@ -1,0 +1,54 @@
+<app-login-template>
+  <form class="login-form" (submit)="onSubmit()">
+
+    <div class="input-block required">
+      <label for="username">{{'login.username' |translate}}</label>
+      <input type="text"
+      id="username"
+      [value]="userName()"
+      (input)="userName.set($any($event.target).value)"
+      (blur)="userNameTouched.set(true)"/>
+      @if(errorUserName()){
+        <ul class="form-error">
+          <li>{{errorUserName()}}</li>
+        </ul>
+      }
+    </div>
+    <div class="input-block required">
+      <label for="password">{{'login.password' | translate}}</label>
+      <div class="password-container">
+        <input
+        [type]="passwordVisible() ? 'text' : 'password'"
+        [value]="password()"
+        (input)="password.set($any($event.target).value)"
+        (blur)="passwordTouched.set(true)"/>
+        <button type="button" class="toggle-password" (click)="togglePasswordVisible()">
+          <i [class]="passwordVisible() ? 'ph ph-eye' : 'ph ph-eye-slash'"></i>
+        </button>
+      </div>
+      @if(errorPassword()){
+        <ul class="form-error">
+          <li>{{errorPassword()}}</li>
+        </ul>
+      }
+       <a class="forgot-password" routerLink="/forgot-password">
+        {{'login.forgotPassword' | translate}}
+      </a>
+    </div>
+
+    <div class="btn-container">
+      <button [disabled]="!isFormValid()" type="submit" class="btn secondary">
+        {{'global.login' | translate}}
+        @if(isLoggingIn()){
+          <app-loader></app-loader>
+        }
+      </button>
+    </div>
+    <div class="other-action">
+      <a type="button" class="btn primary" routerLink="/register">
+        {{'global.createAccount' | translate}}
+      </a>
+    </div>
+
+  </form>
+</app-login-template>
