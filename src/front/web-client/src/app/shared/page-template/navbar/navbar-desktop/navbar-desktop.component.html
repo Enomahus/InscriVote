@@ -3,26 +3,27 @@
   <ul class="menu menu-left">
     <li class="menu-item" [routerLinkActive]="'active'">
       <a class="menu-item-interaction" routerLink="home">
-        {{'navbar.home' | translate}}
+        {{ "navbar.home" | translate }}
       </a>
     </li>
-
   </ul>
 
   <ul class="menu menu-right">
     <li class="menu-item" [routerLinkActive]="'active'">
       <a class="menu-item-interaction" routerLink="guide">
-        {{'navbar.onlineGuide' | translate}}
+        {{ "navbar.onlineGuide" | translate }}
       </a>
     </li>
     <li class="lang-switcher">
       <app-language-switcher></app-language-switcher>
     </li>
     <li>
-      <button class="btn primary"
-      type="button"
-      (click)="logout.emit()"
-      [title]="'navbar.logout' | translate">
+      <button
+        class="btn secondary"
+        type="button"
+        (click)="logout.emit()"
+        [title]="'navbar.logout' | translate"
+      >
         <i class="ph ph-sign-out"></i>
       </button>
     </li>

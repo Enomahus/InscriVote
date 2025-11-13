@@ -1,15 +1,14 @@
 {
     "[csharp]": {
         "editor.defaultFormatter": "csharpier.csharpier-vscode",
-        "editor.maxTokenizationLineLength": 2500,
         "editor.formatOnType": true,
     },
     "[html]": {
-        "editor.defaultFormatter": "csharpier.csharpier-vscode",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
     },
     "[typescript]": {
-        "editor.defaultFormatter": "csharpier.csharpier-vscode",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
     },
     "[scss]": {
@@ -46,13 +45,13 @@
             "port": 42170,
             "driver": "MSSQL",
             "mane": "Inscription vote local",
-            "database": "AppDb",
+            "database": "VotingRollDb",
             "username": "sa",
             "password": "png@ssocies225"
         }
     ],
     "workbench.colorCustomizations": {
-        "titleBar.activeBackground":"#005368",
-        "titleBar.inactiveBackground":"#005368"
+        "titleBar.activeBackground":"#00683d",
+        "titleBar.inactiveBackground":"#00683d"
     }
 }

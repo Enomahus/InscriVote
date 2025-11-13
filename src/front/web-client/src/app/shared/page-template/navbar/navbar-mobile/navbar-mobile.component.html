@@ -3,17 +3,19 @@
   <ul class="menu menu-user">
     <li class="menu-item" [routerLinkActive]="'active'">
       <a class="menu-item-interaction" routerLink="guide">
-        {{'navbar.onlineGuide' | translate}}
+        {{ "navbar.onlineGuide" | translate }}
       </a>
     </li>
     <li class="language-selector">
       <app-language-switcher></app-language-switcher>
     </li>
     <li>
-      <button class="btn primary"
-      type="button"
-      (click)="logout.emit()"
-      [title]="'navbar.logout' | translate">
+      <button
+        class="btn secondary"
+        type="button"
+        (click)="logout.emit()"
+        [title]="'navbar.logout' | translate"
+      >
         <i class="ph ph-sign-out"></i>
       </button>
     </li>
