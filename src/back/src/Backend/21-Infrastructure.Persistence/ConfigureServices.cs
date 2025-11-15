@@ -1,6 +1,7 @@
 ﻿using Infrastructure.Persistence.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Pcea.Core.Net.Authorization.Persistence;
 
 namespace Infrastructure.Persistence
 {
@@ -12,7 +13,7 @@ namespace Infrastructure.Persistence
         )
         {
             services.Configure<DataConfiguration>(configuration.GetSection("DataConfig"));
-            //services.AddApolloCoreNetAuthorizationPersistence();
+            services.AddPceaCoreNetAuthorizationPersistence();
 
             return services;
         }

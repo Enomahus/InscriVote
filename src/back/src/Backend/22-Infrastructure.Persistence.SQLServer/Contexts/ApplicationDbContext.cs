@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Application.Common.Enums;
 using Infrastructure.Persistence.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infrastructure.Persistence.SQLServer.Contexts
 {
@@ -23,6 +25,8 @@ namespace Infrastructure.Persistence.SQLServer.Contexts
         >
     {
         public DbSet<RefreshTokenDao> RefreshTokens { get; set; }
+        public DbSet<AppActionDao> AppActions { get; set; }
+        public DbSet<AppPermissionDao> AppPermissions { get; set; }
 
         public ApplicationDbContext() { }
 
@@ -31,7 +35,16 @@ namespace Infrastructure.Persistence.SQLServer.Contexts
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {
-            base.ConfigureConventions(configurationBuilder);
+            //base.ConfigureConventions(configurationBuilder);
+            configurationBuilder
+                .Properties<AppPermission>()
+                .HaveConversion<EnumToStringConverter<AppPermission>>();
+            configurationBuilder
+                .Properties<AppAction>()
+                .HaveConversion<EnumToStringConverter<AppAction>>();
+            configurationBuilder
+                .Properties<AuthProvider>()
+                .HaveConversion<EnumToStringConverter<AuthProvider>>();
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -65,6 +78,16 @@ namespace Infrastructure.Persistence.SQLServer.Contexts
                 .HasForeignKey(e => e.RoleId)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade);
+            builder
+                .Entity<RoleDao>()
+                .HasMany(e => e.Actions)
+                .WithMany(e => e.Roles)
+                .UsingEntity(j => j.ToTable("RoleAppAction"));
+            builder
+                .Entity<AppActionDao>()
+                .HasMany(e => e.Permissions)
+                .WithMany(e => e.Actions)
+                .UsingEntity(j => j.ToTable("AppActionAppPermission"));
         }
     }
 }

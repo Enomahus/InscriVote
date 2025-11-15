@@ -1,6 +1,8 @@
-﻿using Application.Interfaces.Services;
+﻿using Application.Exceptions.Auth;
+using Application.Interfaces.Services;
 using Infrastructure.Persistence.Entities;
 using Infrastructure.Persistence.SQLServer.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Features.Security.Common
 {
@@ -15,9 +17,13 @@ namespace Application.Features.Security.Common
             throw new NotImplementedException();
         }
 
-        public Task<UserDao> GetUserForAuthenticationAsync(string userName)
+        public async Task<UserDao> GetUserForAuthenticationAsync(string userName)
         {
-            throw new NotImplementedException();
+            return await context
+                    .Users.Include(u => u.UserRoles)
+                    .ThenInclude(ur => ur.Role)
+                    .Where(u => u.UserName == userName)
+                    .FirstOrDefaultAsync() ?? throw new UserAuthenticationException(userName!);
         }
     }
 }

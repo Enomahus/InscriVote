@@ -15,9 +15,12 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.11" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="10.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.10.0-beta.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\12-Application.Common\12-Application.Common.csproj" />
     <ProjectReference Include="..\21-Infrastructure.Persistence\21-Infrastructure.Persistence.csproj" />
     <ProjectReference Include="..\99-Tools\99-Tools.csproj" />
+    <ProjectReference Include="..\Pcea.Core\Pcea.Core.Net.Authorization.Persistence\Pcea.Core.Net.Authorization.Persistence.csproj" />
   </ItemGroup>
 </Project>
