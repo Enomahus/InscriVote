@@ -1,8 +1,10 @@
-﻿using Application.Features;
+﻿using Application;
+using Application.Features;
 using Infrastructure;
 using Infrastructure.Persistence;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Tools;
 
 namespace ServicesConfiguration
 {
@@ -14,8 +16,11 @@ namespace ServicesConfiguration
         )
         {
             services.AddMediator();
+            services.AddToolsServices(config);
             services.AddInfrastructureServices(config);
             services.AddInfrastructurePersistenceServices(config);
+            //services.AddInfrastructureSQLServerServices(configuration);
+            services.AddApplicationServices();
             services.AddApplicationFeaturesServices();
 
             return services;

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Pcea.Core.Net.Authorization.Application</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="13.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pcea.Core.Net.Authorization.Persistence\Pcea.Core.Net.Authorization.Persistence.csproj" />
+  </ItemGroup>
+</Project>

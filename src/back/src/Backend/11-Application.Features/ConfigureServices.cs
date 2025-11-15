@@ -30,10 +30,5 @@ namespace Application.Features
 
             return services;
         }
-
-        //public static void UseApplicationFeaturesServices(this IServiceProvider serviceProvider, IConfiguration config)
-        //{
-        //    serviceProvider.AddReccuringJob<
-        //}
     }
 }

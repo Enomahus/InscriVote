@@ -1,0 +1,50 @@
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Net;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using NSwag.Annotations;
+
+namespace Web.Features.Infrastructure.Infos
+{
+    // This controller does not have /api prefix, it can be used anonymously.
+    [ExcludeFromCodeCoverage]
+    [Route("info")]
+    [OpenApiTag("info")]
+    [Authorize]
+    public class InfosController(TimeProvider timeProvider, Version version) : ControllerBase
+    {
+        /// <summary>
+        /// Get the date on the server
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("date")]
+        [AllowAnonymous]
+        [ProducesResponseType(typeof(DateTime), (int)HttpStatusCode.OK)]
+        public ActionResult GetDate()
+        {
+            return new OkObjectResult(timeProvider.GetUtcNow());
+        }
+
+        /// <summary>
+        /// get the timezone on the server
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("timezone")]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
+        public ActionResult GetTimezone()
+        {
+            return new OkObjectResult(TimeZoneInfo.Local.StandardName);
+        }
+
+        /// <summary>
+        /// Get the application version
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("version")]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
+        public ActionResult GetVersion()
+        {
+            return new OkObjectResult(version.ToString());
+        }
+    }
+}
