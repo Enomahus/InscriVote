@@ -26,7 +26,7 @@ namespace Pcea.Core.Net.Authorization.Web.Interfaces.Services
     {
         public Task<IEnumerable<Claim>> BuildRolesClaimsAsync(
             IEnumerable<string> userRoles,
-            IDictionary<T_EntityId, IEnumerable<string>> userEntitiesRoles,
+            //IDictionary<T_EntityId, IEnumerable<string>> userEntitiesRoles,
             CancellationToken cancellationToken = default
         );
 

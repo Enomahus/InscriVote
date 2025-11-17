@@ -8,23 +8,14 @@ namespace Pcea.Core.Net.Authorization.Web.Services
     {
         public Task<IEnumerable<Claim>> BuildRolesClaimsAsync(
             IEnumerable<string> userRoles,
-            IDictionary<T_EntityId, IEnumerable<string>> userEntitiesRoles,
             CancellationToken cancellationToken = default
         )
         {
-            return Task.FromResult(
-                userRoles
-                    .Select(p => new Claim(ITokenRoleClaimBuilderBase.ROLE_CLAIM_TYPE, p))
-                    .Concat(
-                        userEntitiesRoles.Select(
-                            (p) =>
-                                new Claim(
-                                    ITokenRoleClaimBuilderBase.ENTITY_ROLE_CLAIM_TYPE,
-                                    GetEntityRoleToClaimValue(p.Key, p.Value)
-                                )
-                        )
-                    )
-            );
+            var claims = userRoles.Select(role => new Claim(
+                ITokenRoleClaimBuilderBase.ROLE_CLAIM_TYPE,
+                role
+            ));
+            return Task.FromResult(claims);
         }
 
         public Task<IRoleToken<T_EntityId>> ParseRolesClaimsAsync(

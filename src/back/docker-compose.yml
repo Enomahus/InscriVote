@@ -1,0 +1,17 @@
+services:
+  inscrivote.backend:
+    container_name: inscrivote.backend
+    image: ${DOCKER_REGISTRY-}inscrivote.backend
+    build:
+      context: ../..
+      dockerfile: src/back/src/Backend/01-Web/Dockerfile
+      args:
+        - CONFIGURATION=${CONFIGURATION:-Debug}
+    env_file:
+      - './vairables.dev.env'
+    ports:
+      - '41230:41230'
+    volumes:
+      - ~/.vsdbg:/remote_debugger:rw
+    
+      

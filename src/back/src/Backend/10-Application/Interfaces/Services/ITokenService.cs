@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Application.Models.Auth;
+﻿using Application.Models.Auth;
 using Infrastructure.Persistence.Entities;
 
 namespace Application.Interfaces.Services
@@ -20,7 +15,7 @@ namespace Application.Interfaces.Services
         Task<Tokens> CreateTokensAsync(
             UserDao user,
             IEnumerable<string> roles,
-            IDictionary<long, IEnumerable<string>> userEntitiesRoles,
+            //IDictionary<long, IEnumerable<string>> userEntitiesRoles,
             CancellationToken cancellationToken = default
         );
     }

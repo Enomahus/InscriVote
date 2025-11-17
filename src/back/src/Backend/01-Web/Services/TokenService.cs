@@ -25,12 +25,13 @@ namespace Web.Services
         private async Task<string> CreateTokenAsync(
             UserDao user,
             IEnumerable<string> roles,
-            IDictionary<long, IEnumerable<string>> userEntitiesRoles,
+            //IDictionary<long, IEnumerable<string>> userEntitiesRoles,
             CancellationToken cancellationToken = default
         )
         {
             var signingCredentials = GetSigningCredentials();
-            var claims = await GetClaimsAsync(user, roles, userEntitiesRoles, cancellationToken);
+            //var claims = await GetClaimsAsync(user, roles, userEntitiesRoles, cancellationToken);
+            var claims = await GetClaimsAsync(user, roles, cancellationToken);
             var tokenOptions = GenerateTokenOptions(signingCredentials, claims);
             return new JwtSecurityTokenHandler().WriteToken(tokenOptions);
         }
@@ -66,18 +67,15 @@ namespace Web.Services
         private async Task<List<Claim>> GetClaimsAsync(
             UserDao user,
             IEnumerable<string> roles,
-            IDictionary<long, IEnumerable<string>> userEntitiesRoles,
+            //IDictionary<long, IEnumerable<string>> userEntitiesRoles,
             CancellationToken cancellationToken = default
         )
         {
             var rolesClaims = await tokenRoleClaimBuilder.BuildRolesClaimsAsync(
                 roles,
-                userEntitiesRoles,
+                //userEntitiesRoles,
                 cancellationToken
             );
-            //var lastTermsOfUseDate = await context
-            //    .TermsOfUses.Select(t => t.PublicationDate)
-            //    .FirstAsync(cancellationToken);
             List<Claim> claims =
             [
                 new(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
@@ -85,23 +83,6 @@ namespace Web.Services
                 new(JwtRegisteredClaimNames.Email, user.Email!),
                 new("lastName", user.LastName ?? ""),
                 new("firstName", user.FirstName ?? ""),
-                //new(
-                //    "needsTermsOfUseValidation",
-                //    (
-                //        user.TermsOfUseAcceptationDate is null
-                //        || lastTermsOfUseDate < timeProvider.GetUtcNow()
-                //            && user.TermsOfUseAcceptationDate.Value < lastTermsOfUseDate
-                //    ).ToString()
-                //),
-                //new(
-                //    "needsProfileCompletion",
-                //    (
-                //        user.UserStakeholders.Count == 0
-                //        || user.FirstName is null
-                //        || user.LastName is null
-                //        || user.PhoneNumber is null
-                //    ).ToString()
-                //),
                 .. rolesClaims,
             ];
             return claims;
@@ -129,7 +110,7 @@ namespace Web.Services
         public async Task<Tokens> CreateTokensAsync(
             UserDao user,
             IEnumerable<string> roles,
-            IDictionary<long, IEnumerable<string>> userEntitiesRoles,
+            ///IDictionary<long, IEnumerable<string>> userEntitiesRoles,
             CancellationToken cancellationToken = default
         )
         {
@@ -138,7 +119,7 @@ namespace Web.Services
                 string accessToken = await CreateTokenAsync(
                     user,
                     roles,
-                    userEntitiesRoles,
+                    //userEntitiesRoles,
                     cancellationToken
                 );
                 string refreshToken = await CreateRefreshTokenAsync(user.Id, cancellationToken);
