@@ -1,0 +1,62 @@
+services:
+  inscrivote.backend:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=41230
+    ports:
+      - '41230:41230'
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ~/.vsdbg:/remote_debugger:rw
+    depends_on:
+      inscrivote.database.init:
+        condition: service_completed_successfully
+      inscrivote.jaeger:
+        condition: service_completed_successfully
+
+  inscrivote.jaeger:
+    container_name: inscrivote.jaeger
+    image: jaegertracing/all-in-one:1.58
+    environment:
+      - METRICS_STORAGE_TYPE=prometheus
+      - PROMETHEUS_SERVER_URL=http://inscrivote.prometheus:9091
+      - PROMETHEUS_QUERY_SUPPORT_SPANMETRICS_CONNECTOR=${PROMETHEUS_QUERY_SUPPORT_SPANMETRICS_CONNECTOR:-true}
+      - PROMETHEUS_QUERY_NAMESPACE=${PROMETHEUS_QUERY_NAMESPACE:-}
+      - PROMETHEUS_QUERY_DURATION_UNIT=${PROMETHEUS_QUERY_DURATION_UNIT:-}
+      - PROMETHEUS_QUERY_NORMALIZE_CALLS=true
+      - PROMETHEUS_QUERY_NORMALIZE_DURATION=true
+    ports:
+      - '41230:16686'
+
+  inscrivote.database:
+    container_name: 'inscrivote.database'
+    image: 'mcr.microsoft.com/mssql/server:2022-CU13-ubuntu-22.04'
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=png@ssocies225
+      - MSSQL_PID=Developer
+    ports:
+      - 41235:1433
+    healthcheck:
+      test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'png@ssocies225' -d 'master' -Q 'select 1'
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  
+  inscrivote.database.init:
+    container_name: inscrivote.database.init
+    image: 'mcr.microsoft.com/mssql/server:2022-CU13-ubuntu-22.04'
+    volumes:
+      - ../dbinit:/docker-entrypoint-initdb.d
+    depends_on:
+      inscrivote.database:
+        condition: service_healthy
+    command: >
+      bash -c '
+      /opt/mssql-tools/bin/sqlcmd -S inscrivote.database -U sa -P png@ssocies225 -d master -i docker-entrypoint-initdb.d/init.sql;
+      echo "All done!";
+      '

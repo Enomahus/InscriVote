@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Application.Common.Enums;
+﻿using Application.Common.Enums;
 using Infrastructure.Persistence.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -27,6 +22,9 @@ namespace Infrastructure.Persistence.SQLServer.Contexts
         public DbSet<RefreshTokenDao> RefreshTokens { get; set; }
         public DbSet<AppActionDao> AppActions { get; set; }
         public DbSet<AppPermissionDao> AppPermissions { get; set; }
+        public DbSet<CitizenDao> Citizens { get; set; }
+        public DbSet<RegistrationDao> Registrations { get; set; }
+        public DbSet<DocumentDao> Documents { get; set; }
 
         public ApplicationDbContext() { }
 
@@ -39,12 +37,30 @@ namespace Infrastructure.Persistence.SQLServer.Contexts
             configurationBuilder
                 .Properties<AppPermission>()
                 .HaveConversion<EnumToStringConverter<AppPermission>>();
+
             configurationBuilder
                 .Properties<AppAction>()
                 .HaveConversion<EnumToStringConverter<AppAction>>();
+
             configurationBuilder
                 .Properties<AuthProvider>()
                 .HaveConversion<EnumToStringConverter<AuthProvider>>();
+
+            configurationBuilder
+                .Properties<PersonTitle>()
+                .HaveConversion<EnumToStringConverter<PersonTitle>>();
+
+            configurationBuilder
+                .Properties<RegistrationRequestType>()
+                .HaveConversion<EnumToStringConverter<RegistrationRequestType>>();
+
+            configurationBuilder
+                .Properties<Gender>()
+                .HaveConversion<EnumToStringConverter<Gender>>();
+
+            configurationBuilder
+                .Properties<RegisterStatus>()
+                .HaveConversion<EnumToStringConverter<RegisterStatus>>();
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -88,6 +104,12 @@ namespace Infrastructure.Persistence.SQLServer.Contexts
                 .HasMany(e => e.Permissions)
                 .WithMany(e => e.Actions)
                 .UsingEntity(j => j.ToTable("AppActionAppPermission"));
+
+            builder
+                .Entity<CitizenDao>()
+                .HasMany(e => e.Registrations)
+                .WithOne(e => e.Citizen)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

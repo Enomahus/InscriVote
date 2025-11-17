@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "inscrivote.backend",
+      "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}/swagger",
+      "serviceActions": {
+        "inscrivote.backend": "StartDebugging",
+        "inscrivote.database": "StartWithoutDebugging",
+        "inscrivote.jaeger": "StartWithoutDebugging"
+      }
+    }
+  }
+}
