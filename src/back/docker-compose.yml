@@ -8,7 +8,7 @@ services:
       args:
         - CONFIGURATION=${CONFIGURATION:-Debug}
     env_file:
-      - './vairables.dev.env'
+      - './variables.dev.env'
     ports:
       - '41230:41230'
     volumes:

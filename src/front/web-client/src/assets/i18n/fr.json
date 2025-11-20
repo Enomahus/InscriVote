@@ -65,7 +65,8 @@
     "forgotActionButton": "Recevoir le mail de réinitialisation",
     "mailAlreadySendButton": "Mail envoyé !",
     "returnToLogin": "Retour à la page de connexion",
-    "success": "Mail de réinitialisation envoyé si un compte existe avec cet email."
+    "success": "Mail de réinitialisation envoyé si un compte existe avec cet email.",
+    "placeholder": "Entrez votre email"
   },
   "formsError": {
     "emailInvalid": "L'email n'est pas au bon format",

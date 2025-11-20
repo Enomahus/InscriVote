@@ -1,7 +1,9 @@
 ﻿using Application;
 using Application.Features;
 using Infrastructure;
+using Infrastructure.Email;
 using Infrastructure.Persistence;
+using Infrastructure.Persistence.SQLServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Tools;
@@ -19,7 +21,8 @@ namespace ServicesConfiguration
             services.AddToolsServices(config);
             services.AddInfrastructureServices(config);
             services.AddInfrastructurePersistenceServices(config);
-            //services.AddInfrastructureSQLServerServices(configuration);
+            services.AddInfrastructureSQLServerServices(config);
+            services.AddInfrastructureEmailServices(config);
             services.AddApplicationServices();
             services.AddApplicationFeaturesServices();
 
