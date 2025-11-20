@@ -1,12 +1,8 @@
 using System.Net;
-using Application.Features;
-using Hangfire;
-using Hangfire.Dashboard;
 using Infrastructure.Persistence.SQLServer;
 using Microsoft.AspNetCore.Diagnostics;
 using ServicesConfiguration;
 using Web.Common;
-using Web.Common.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -85,16 +81,6 @@ app.UseExceptionHandler(c =>
 );
 
 app.UseHealthChecks("/health");
-
-// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
-//    app.MapOpenApi();
-//}
-
-//app.UseHttpsRedirection();
-
-//app.UseAuthorization();
 
 app.UseCors();
 

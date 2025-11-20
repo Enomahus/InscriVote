@@ -10,18 +10,18 @@ export const routes: Routes = [
   {
     path: '',
     redirectTo: '/home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'login',
     component: Login,
-    title: 'login.title'
+    title: 'login.title',
   },
   { path: 'reset-password', component: ResetPassword },
   {
     path: 'forgot-password',
     component: ForgotPassword,
-    title: 'forgotPassword.title'
+    title: 'forgotPassword.title',
   },
   {
     path: '',
@@ -30,13 +30,13 @@ export const routes: Routes = [
       {
         path: 'home',
         component: Home,
-        title: 'home.title'
+        title: 'home.title',
       },
       {
         path: 'guide',
         component: OnlineGuide,
-        title: 'navbar.onlineGuide'
-      }
-    ]
-  }
+        title: 'navbar.onlineGuide',
+      },
+    ],
+  },
 ];
